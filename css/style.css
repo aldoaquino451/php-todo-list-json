@@ -9,6 +9,10 @@
   height: 40px;
 }
 
+.a-hidden {
+  visibility: hidden;
+}
+
 .task-done {
   text-decoration: line-through;
 }

@@ -34,10 +34,10 @@
       <!-- sezione titolo  -->
       <h1 class="text-center text-uppercase fw-bold ">{{ title }}</h1>
 
-      <p v-if="list.length === 0" class="text-danger text-center my-4">Non hai più task da completare!</p>
+      <p v-if="list.length === 0" class="text-danger text-center mt-4">Non hai più task da completare!</p>
 
       <!-- sezione lista task  -->
-      <ul class="list-group my-4" v-else>
+      <ul class="list-group mt-4" v-else>
         <li v-for="(item, index) in list"
           class="list-group-item d-flex justify-content-between align-items-center  text-capitalize gap-4">
 
@@ -58,6 +58,11 @@
 
         </li>
       </ul>
+
+      <!-- sezione input nuova task  -->
+      <p class="text-danger text-center my-3" :class="error ? '' : 'a-hidden'">
+        Clicca sul testo della task per completarla e poi se vorrai potrai rimuoverla!
+      </p>
 
       <!-- sezione input nuova task  -->
       <div class="d-flex justify-content-center gap-2  my-3">

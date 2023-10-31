@@ -8,6 +8,7 @@ createApp({
       title: 'PHP ToDo List JSON',
       list: [],
       newTask: '',
+      error: false,
 
     }
   },
@@ -39,11 +40,20 @@ createApp({
     removeTask(index) {
       const formJs = new FormData();
       formJs.append('indexRemove', index);
+      console.log(this.list);
 
-      axios.post(this.endpoint, formJs)
-        .then(res => {
-          this.list = res.data;
-        })
+      if (this.list[index].done === true) {
+        this.error = false;
+
+        axios.post(this.endpoint, formJs)
+          .then(res => {
+            this.list = res.data;
+          })
+      }
+      else {
+        this.error = true
+      }
+
     },
 
     toggleDone(index) {
