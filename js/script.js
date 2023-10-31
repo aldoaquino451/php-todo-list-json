@@ -4,7 +4,7 @@ createApp({
 
   data() {
     return {
-      saluto: 'ciao',
+      title: 'PHP ToDo List JSON',
 
     }
   },
