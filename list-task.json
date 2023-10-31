@@ -1,5 +1,1 @@
-[
-  "primo",
-  "secondo",
-  "terzo"
-]
+[{"text":"primo","done":false},{"text":"secondo","done":false},{"text":"terzo","done":false}]

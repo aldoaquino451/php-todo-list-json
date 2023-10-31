@@ -23,6 +23,7 @@ Buon lavoro!
 
 
 ## Esercizio
+
 - costruisco l'interfaccia utente in html
 - creo l'array direttamente sul server php e lo codifico in json 
 - faccio una chiamata axios e salvo il risultato in una lista
@@ -31,6 +32,12 @@ Buon lavoro!
 - aggiugo una funzione che pusha il valore dell'input dentro l'array 
 - creo un file json
 - richiamo il file json in php e lo decodifico, poi continuo con i passagi già svolti
+
+**Bonus**
+- al json, per ogni elemento aggiungo la proprietà done, di default false
+- aggiungo al click una classe line through all'elemento della lista 
+- e cambio il valore del done nel json
+- aggiungere un cestino che al click permetter di rimuovere il task
 
 
 

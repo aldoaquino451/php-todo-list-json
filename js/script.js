@@ -13,31 +13,69 @@ createApp({
   },
 
   methods: {
+
     getApi() {
       axios.post(this.endpoint)
         .then(res => {
           this.list = res.data;
-          console.log(this.list);
         })
     },
 
     addTask() {
-      // creo un form in javascript e lo salvo in una variabile
+      // 1. creo un form in javascript e lo salvo in una variabile
+      // 2. a cui aggiungo i dati che voglio fornire, con la sintassi chiave valore
+      // 3. faccio la chiamata axios dove passo i nuovi dati, il server applicherà le varie modifiche e infine aggiorno la nuova lista
+
       const formJs = new FormData();
+      formJs.append('text', this.newTask);
 
-      // a cui aggiungo i dati che voglio fornire, con la sintassi chiave valore
-      formJs.append('taskItem', this.newTask);
-
-      // faccio la chiamata axios dove passo i nuovi dati, il server applicherà le varie modifiche e infine aggiorno la nuova lista
       axios.post(this.endpoint, formJs)
         .then(res => {
-
           this.newTask = '';
-
           this.list = res.data;
-          console.log(this.list);
         })
     },
+
+    removeTask(index) {
+      const formJs = new FormData();
+      formJs.append('indexRemove', index);
+
+      axios.post(this.endpoint, formJs)
+        .then(res => {
+          this.list = res.data;
+        })
+    },
+
+    toggleDone(index) {
+      const formJs = new FormData();
+      formJs.append('indexDone', index);
+
+      axios.post(this.endpoint, formJs)
+        .then(res => {
+          this.list = res.data;
+        })
+    },
+
+    reset() {
+      const formJs = new FormData();
+      formJs.append('resetBtn', 'reset');
+
+      axios.post(this.endpoint, formJs)
+        .then(res => {
+          this.list = res.data;
+        })
+    },
+
+    editTask() {
+      const formJs = new FormData();
+      formJs.append('index', index);
+
+      axios.post(this.endpoint, formJs)
+        .then(res => {
+          this.list = res.data;
+        })
+    }
+
   },
 
   mounted() {
