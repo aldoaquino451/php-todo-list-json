@@ -26,47 +26,47 @@
   <title>PHP ToDo List JSON</title>
 </head>
 
-<!-- 
-prima cosa?
-linkare file javascript
-aggiungere una container #app
-linkare eventuale file css
-
-di cosa ho bisogno?
-axios - per fare le chiamate api
-vue global.js - per stampare i risultati javascript nell"html
-bootstap e font awesome - per lo stile
--->
-
 <body>
 
   <div id="app">
     <div class="a-container">
 
+      <!-- sezione titolo  -->
       <h1 class="text-center text-uppercase fw-bold ">{{ title }}</h1>
 
-      <ul class="list-group">
-        <li v-for="(item, index) in list" class="list-group-item d-flex justify-content-between text-capitalize gap-3">
-          <span class="w-100 " @click="toggleDone(index)" :class="item.done ? 'task-done' : ''">
+      <p v-if="list.length === 0" class="text-danger text-center my-4">Non hai più task da completare!</p>
+
+      <!-- sezione lista task  -->
+      <ul class="list-group my-4" v-else>
+        <li v-for="(item, index) in list"
+          class="list-group-item d-flex justify-content-between align-items-center  text-capitalize gap-4">
+
+          <!-- 1. -->
+          <span class="w-100 h-100 " @click="toggleDone(index)" :class="item.done ? 'task-done' : ''">
             {{ item.text }}
           </span>
+
+          <!-- 2. -->
           <div class="d-flex gap-3 ">
-            <button class="btn btn-primary  ">
+            <button class="btn btn-primary a-btn ">
               <i class="fa-solid fa-pen-to-square"></i>
             </button>
-            <button @click="removeTask(index)" class="btn btn-danger">
+            <button @click="removeTask(index)" class="btn btn-danger a-btn">
               <i class="fa-solid fa-trash"></i>
             </button>
           </div>
+
         </li>
       </ul>
 
+      <!-- sezione input nuova task  -->
       <div class="d-flex justify-content-center gap-2  my-3">
         <input @keyup.enter="addTask" class="form-control w-50" type="text" placeholder="Inserisci nuova task"
           v-model.trim="newTask">
         <button @click="addTask" class="btn btn-success ">Aggiungi</button>
       </div>
 
+      <!-- sezione reset con le solite 3 task  -->
       <div class="d-flex justify-content-center ">
         <button @click="reset" class="btn btn-secondary ">Reset</button>
       </div>

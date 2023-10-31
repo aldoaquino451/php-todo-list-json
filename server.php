@@ -2,15 +2,15 @@
 
 $tasksDefault = [
   [
-    "text" => "primo",
+    "text" => "Dare da mangiare al gatto",
     "done" => false
   ],
   [
-    "text" => "secondo",
+    "text" => "Gettare la spazzatura",
     "done" => false
   ],
   [
-    "text" => "terzo",
+    "text" => "Fare la spesa",
     "done" => false
   ]
 ];
