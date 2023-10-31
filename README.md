@@ -25,7 +25,8 @@ Buon lavoro!
 ## Esercizio
 - costruisco l'interfaccia utente in html
 - creo l'array direttamente sul server php e lo codifico in json 
-- faccio una chiamata axios e stampo il risultato in una lista
+- faccio una chiamata axios e salvo il risultato in una lista
+- stampo la lista in hmtl con vue
 - aggiungo un input e mi salvo in una variabile il valore
 - aggiugo una funzione che pusha il valore dell'input dentro l'array 
 - creo un file json

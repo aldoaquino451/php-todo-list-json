@@ -44,12 +44,9 @@ bootstap e font awesome - per lo stile
     <div class="a-container">
       <h1 class="text-center text-uppercase fw-bold ">{{ title }}</h1>
       <ul class="list-group">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <li v-for="(item, index) in list" class="list-group-item">{{ item }}</li>
       </ul>
+
     </div>
   </div>
 
