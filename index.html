@@ -46,7 +46,11 @@ bootstap e font awesome - per lo stile
       <ul class="list-group">
         <li v-for="(item, index) in list" class="list-group-item">{{ item }}</li>
       </ul>
-
+      <div class="d-flex justify-content-center gap-2  my-3">
+        <input @keyup.enter="addTask" class="form-control w-50" type="text" placeholder="Inserisci nuova task"
+          v-model.trim="newTask">
+        <button @click="addTask" class="btn btn-success ">Aggiungi</button>
+      </div>
     </div>
   </div>
 

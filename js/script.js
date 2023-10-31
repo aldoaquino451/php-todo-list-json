@@ -18,12 +18,19 @@ createApp({
           this.list = res.data;
           console.log(this.list);
         })
+    },
+
+    addTask() {
+      if (this.newTask !== '') {
+        this.list.push(this.newTask);
+        this.newTask = '';
+        console.log(this.list);
+      }
     }
   },
 
   mounted() {
     this.getApi();
-  },
-
+  }
 
 }).mount('#app');
